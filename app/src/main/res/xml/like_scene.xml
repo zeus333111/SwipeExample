@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start_scene">
+        <Constraint android:id="@+id/card_one">
+            <Layout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/unlike">
+        <Constraint android:id="@+id/card_one">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="700dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintWidth_percent="0.8"
+                app:layout_constraintHeight_percent="0.8"/>
+        </Constraint>
+
+        <Constraint android:id="@+id/card_two">
+            <Transform
+                android:scaleY="1"
+                android:scaleX="1"/>
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet
+        android:id="@+id/offScreenUnlike"
+        app:deriveConstraintsFrom="@id/unlike">
+
+        <Constraint android:id="@+id/card_one">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="1000dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintWidth_percent="0.8"
+                app:layout_constraintHeight_percent="0.1"/>
+        </Constraint>
+    </ConstraintSet>
+
+
+    <Transition
+        android:id="@+id/startUnlike"
+        app:constraintSetEnd="@id/unlike"
+        app:constraintSetStart="@id/start_scene">
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:onTouchUp="autoComplete"
+            app:touchAnchorSide="top"
+        app:touchRegionId="@id/card_one"/>
+    </Transition>
+
+    <Transition
+        android:id="@+id/t_off_unlike"
+        app:autoTransition="animateToEnd"
+        app:constraintSetEnd="@id/offScreenUnlike"
+        app:constraintSetStart="@id/unlike"
+        app:duration="150"
+        />
+
+    <ConstraintSet android:id="@+id/like">
+        <Constraint android:id="@+id/card_one">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="700dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintWidth_percent="0.8"
+                app:layout_constraintHeight_percent="0.8"/>
+        </Constraint>
+
+        <Constraint android:id="@+id/card_two">
+            <Transform
+                android:scaleY="1"
+                android:scaleX="1"/>
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet
+        android:id="@+id/offScreenLike"
+        app:deriveConstraintsFrom="@id/like">
+
+        <Constraint android:id="@+id/card_one">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="1000dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintWidth_percent="0.8"
+                app:layout_constraintHeight_percent="0.1"/>
+        </Constraint>
+    </ConstraintSet>
+
+
+    <Transition
+        android:id="@+id/startLike"
+        app:constraintSetEnd="@id/like"
+        app:constraintSetStart="@id/start_scene">
+        <OnSwipe
+            app:dragDirection="dragDown"
+            app:onTouchUp="autoComplete"
+            app:touchAnchorSide="bottom"
+            app:touchRegionId="@id/card_one"/>
+    </Transition>
+
+    <Transition
+        android:id="@+id/t_off_like"
+        app:autoTransition="animateToEnd"
+        app:constraintSetEnd="@id/offScreenLike"
+        app:constraintSetStart="@id/like"
+        app:duration="150"/>
+
+    <ConstraintSet android:id="@+id/two_start">
+        <Constraint android:id="@+id/card_two">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+            <Transform
+                android:scaleX="0.9"
+                android:scaleY="0.9"/>
+        </Constraint>
+    </ConstraintSet>
+
+</MotionScene>

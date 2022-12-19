@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/home_fragment"
+    android:id="@+id/main_graph">
+
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.example.swipeexample.presentation.HomeFragment"
+        android:label="Home_fragment"
+        />
+
+    <fragment
+        android:id="@+id/like_fragment"
+        android:name="com.example.swipeexample.presentation.LikeFragment"
+        android:label="Like_fragment"/>
+</navigation>
