@@ -12,6 +12,11 @@
         android:icon="@android:drawable/ic_dialog_dialer"
         android:title="Like"/>
 
+    <item
+        android:id="@+id/chip_fragment"
+        android:icon="@android:drawable/ic_dialog_dialer"
+        android:title="Chips"/>
+
     <!--<item
         android:id="@+id/m_profile"
         android:icon="@android:drawable/ic_dialog_dialer"
