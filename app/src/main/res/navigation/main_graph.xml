@@ -19,4 +19,9 @@
         android:id="@+id/chip_fragment"
         android:name="com.example.swipeexample.presentation.ChipsFragment"
         android:label="Chip_fragment"/>
+
+    <fragment
+        android:id="@+id/share_fragment"
+        android:name="com.example.swipeexample.presentation.ShareFragment"
+        android:label="Share_Fragment"/>
 </navigation>

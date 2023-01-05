@@ -17,13 +17,9 @@
         android:icon="@android:drawable/ic_dialog_dialer"
         android:title="Chips"/>
 
-    <!--<item
-        android:id="@+id/m_profile"
-        android:icon="@android:drawable/ic_dialog_dialer"
-        android:title="Profile"/>
-
     <item
-        android:id="@+id/m_notification"
+        android:id="@+id/share_fragment"
         android:icon="@android:drawable/ic_dialog_dialer"
-        android:title="Notification"/>-->
+        android:title="Share"/>
+
 </menu>
