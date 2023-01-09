@@ -12,6 +12,8 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
+        <item name="textInputStyle">@style/Theme.SwipeExample.OutLinedButton</item>
     </style>
 
     <style name="Theme.AppSplash" parent="Theme.SplashScreen" >
@@ -24,4 +26,16 @@
         <item name="android:navigationBarColor">@color/teal_200</item>
         <item name="android:windowLightStatusBar">true</item>
     </style>
+
+    <style name="Theme.SwipeExample.OutLinedButton">
+        <item name="materialThemeOverlay">@style/TextInputs_overlay</item>
+        <item name="colorPrimary">#ffff00</item>
+        <item name="colorSurface">#ff0000</item>
+    </style>
+
+    <style name="TextInputs_overlay" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="colorPrimary">#ffff00</item>
+        <item name="colorSurface">#ff0000</item>
+    </style>
+
 </resources>

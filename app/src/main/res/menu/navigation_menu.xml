@@ -22,4 +22,9 @@
         android:icon="@android:drawable/ic_dialog_dialer"
         android:title="Share"/>
 
+    <item
+        android:id="@+id/form_fragment"
+        android:icon="@android:drawable/ic_dialog_dialer"
+        android:title="Form"/>
+
 </menu>

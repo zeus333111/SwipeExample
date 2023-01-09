@@ -24,4 +24,9 @@
         android:id="@+id/share_fragment"
         android:name="com.example.swipeexample.presentation.ShareFragment"
         android:label="Share_Fragment"/>
+
+    <fragment
+        android:id="@+id/form_fragment"
+        android:name="com.example.swipeexample.presentation.FormFragment"
+        android:label="Form_Fragment"/>
 </navigation>
