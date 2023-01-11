@@ -1,6 +1,6 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
-    <style name="Theme.SwipeExample" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.SwipeExample" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -13,10 +13,10 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
 
-        <item name="textInputStyle">@style/Theme.SwipeExample.OutLinedButton</item>
+        <item name="textInputStyle">@style/OutLinedButton</item>
     </style>
 
-    <style name="Theme.AppSplash" parent="Theme.SplashScreen" >
+    <style name="Theme.AppSplash" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/white</item>
         <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_round</item>
         <item name="windowSplashScreenAnimationDuration">300</item>
@@ -27,15 +27,19 @@
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
-    <style name="Theme.SwipeExample.OutLinedButton">
+    <style name="OutLinedButton">
         <item name="materialThemeOverlay">@style/TextInputs_overlay</item>
-        <item name="colorPrimary">#ffff00</item>
-        <item name="colorSurface">#ff0000</item>
+        <item name="shapeAppearance">@style/TexFieldsShape</item>
     </style>
 
-    <style name="TextInputs_overlay" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="colorPrimary">#ffff00</item>
-        <item name="colorSurface">#ff0000</item>
+    <style name="TextInputs_overlay" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="colorPrimary">@color/yellow</item>
+        <item name="colorSurface">@color/red</item>
+    </style>
+
+    <style name="TexFieldsShape">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">25dp</item>
     </style>
 
 </resources>

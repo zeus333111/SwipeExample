@@ -61,16 +61,16 @@ class LikeFragment: Fragment() {
 
             override fun onTransitionCompleted(motionLayout: MotionLayout?, currentId: Int) {
                 when(currentId) {
-                    0x7f08014a -> {
+                    R.id.offScreenLike -> {
                         viewModel.nextCard()
                         Toast.makeText(requireContext(), "Like", Toast.LENGTH_SHORT).show()
                     }
-                    0x7f080149 -> {
+                    R.id.offScreenUnlike-> {
                         viewModel. nextCard()
                         Toast.makeText(requireContext(), "UnLike", Toast.LENGTH_SHORT).show()
                     }
                 }
-                binding.motionLayout.jumpToState(0x7f0801fb)
+                binding.motionLayout.jumpToState(R.id.start_scene)
             }
 
             override fun onTransitionTrigger(
