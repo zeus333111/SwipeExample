@@ -13,7 +13,7 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
 
-        <item name="textInputStyle">@style/OutLinedButton</item>
+        <item name="textInputStyle">@style/OutLinedText</item>
     </style>
 
     <style name="Theme.AppSplash" parent="Theme.SplashScreen">

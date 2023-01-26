@@ -13,7 +13,8 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
 
-        <item name="textInputStyle">@style/OutLinedButton</item>
+        <!--Aqui se define el estilo para todos los til y tiet-->
+        <item name="textInputStyle">@style/OutLinedText</item>
     </style>
 
     <style name="Theme.AppSplash" parent="Theme.SplashScreen">
@@ -27,7 +28,7 @@
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
-    <style name="OutLinedButton">
+    <style name="OutLinedText">
         <item name="materialThemeOverlay">@style/TextInputs_overlay</item>
         <item name="shapeAppearance">@style/TexFieldsShape</item>
     </style>

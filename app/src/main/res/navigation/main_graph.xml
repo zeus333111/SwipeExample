@@ -29,4 +29,10 @@
         android:id="@+id/form_fragment"
         android:name="com.example.swipeexample.presentation.FormFragment"
         android:label="Form_Fragment"/>
+
+    <fragment
+        android:id="@+id/scroll_fragment"
+        android:name="com.example.swipeexample.presentation.ScrollFragment"
+        android:label="Scroll_Fragment"/>
+
 </navigation>
