@@ -10,13 +10,31 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import com.example.swipeexample.data.PreferencesStore
 import com.example.swipeexample.databinding.ShareFragmentBinding
+import com.example.swipeexample.domain.interactors.GetFlagUseCase
+import com.example.swipeexample.domain.interactors.SetFlogUseCase
+import com.example.swipeexample.presentation.viewmodel.ShareViewModel
 import java.io.File
 import java.io.FileOutputStream
 
 class ShareFragment: Fragment() {
 
     private lateinit var binding: ShareFragmentBinding
+    private val viewModel: ShareViewModel by viewModels {
+        val preferences = PreferencesStore(requireContext())
+        object : ViewModelProvider.Factory {
+            override fun <T : ViewModel> create(modelClass: Class<T>): T {
+                return ShareViewModel(
+                    GetFlagUseCase(preferences),
+                    SetFlogUseCase(preferences)
+                ) as T
+            }
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,9 +51,20 @@ class ShareFragment: Fragment() {
     }
 
     private fun setUpBinding() {
+        viewModel.getFlag()
         binding.btnShare.setOnClickListener {
             val screenShoot = takeScreenShot()
             share(screenShoot)
+        }
+        binding.btnPreferences.setOnClickListener {
+            if (viewModel.flag.value == false) {
+                viewModel.setFlag(true)
+            } else {
+                viewModel.setFlag(false)
+            }
+        }
+        viewModel.flag.observe(viewLifecycleOwner) {
+            binding.inTitle.text = it.toString()
         }
     }
 
